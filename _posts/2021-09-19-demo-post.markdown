@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Website Installed"
+date:   2021-09-19 12:36:23 +0300
+---
+
+
+Hey! Welcome to your new blog. <br>
+You can edit/delete this article from _posts folder.

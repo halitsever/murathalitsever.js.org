@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">
+      {{ page.title | escape }}
+    </h1>
+    <p class="post-meta">
+      <time
+        class="dt-published"
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+      >
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+        -%} {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%} •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+        ><span class="p-author h-card" itemprop="name"
+          >{{ page.author }}</span
+        ></span
+      >
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%} {%- include disqus_comments.html -%} {%-
+  endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="murathalitsever/murathalitsever.github.io"
+    issue-term="pathname"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <br /><br /><a style="font-size:150%;">Other articles:</a>
+  {%- for post in site.posts limit:4 -%} {%- assign date_format =
+  site.minima.date_format | default: "%b %-d, %Y" -%}
+
+  <ul>
+    <li>
+      <a
+        style="color:white; text-decoration:none;"
+        href="{{ post.url | relative_url }}"
+        >{{ post.title | escape }}</a
+      >
+    </li>
+  </ul>
+  {%- endfor -%} {% include footer.html %}
+</article>

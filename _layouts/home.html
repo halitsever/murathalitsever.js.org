@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<div id="menu">
+  <a href="{{site.baseurl}}/index">Homepage</a>
+  <a href="{{site.baseurl}}/blog">Blog</a>
+  <a href="{{site.baseurl}}/contact">Contact</a>
+</div>
+<div id="container">
+  <div id="name"><h1>Halit Sever</h1></div>
+  <div id="description">
+    <p>
+      Welcome to my website! I'm a developer, I like to do open source
+      projects.<br />
+      I'm currently learning ruby rails<br />
+      If you want to work with me, you can check out the contact page.
+    </p>
+    <br /><br />
+    <a href="#page-content" class="button">More...</a>
+  </div>
+</div>
+<div id="page-content">
+  <br /><br />
+  <h2>Technical skills</h2>
+  <br />
+  <div class="card">
+    <a>
+      <img id="icon" alt="mouse cursor icon" src="./contents/assests/icons/icon_web.svg" />Web
+      Development (End-to-End)<br />
+      <img id="icon" alt="refresh icon" src="./contents/assests/icons/icon_responsive.svg" />
+      Responsive Design</a
+    >
+  </div>
+  <div class="card">
+    <a
+      ><img id="icon" alt="mobile phone icon" src="./contents/assests/icons/icon_phone.svg" />Mobile
+      Development (Native)<br />
+      <img id="icon" alt="stats panel icon" src="./contents/assests/icons/icon_desktop.svg" /> Desktop
+      Application Development</a
+    >
+  </div>
+
+  <div style="clear:left;"></div>
+  <div id="blank"></div>
+  <h2>Latest Articles</h2>
+  <div id="articles">
+    {% assign colorswitch = 0 %} {%- for post in site.posts limit:4 -%} {%-
+    assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {%
+    if colorswitch == 1 or colorswitch == 2 %} {% if colorswitch == 1 %}
+    <div style="margin-left:2%;" class="card-article-big">
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2>{{ post.title | escape }}</h2>
+        {{ post.excerpt }}
+      </a>
+    </div>
+    {% else %}
+    <div style="margin-right:2%;" class="card-article-big">
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2>{{ post.title | escape }}</h2>
+        {{ post.excerpt }}
+      </a>
+    </div>
+    {% endif %} {% else %}
+
+    <div class="card-article-small">
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2>{{ post.title | escape }}</h2>
+        {{ post.excerpt }}
+      </a>
+    </div>
+
+    {% endif %} {% assign colorswitch = colorswitch | plus: 1 %} {%- endfor -%}
+
+    <div style="clear:left;"></div>
+
+    {% include footer.html %}
+  </div>
+</div>
