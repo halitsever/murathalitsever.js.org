@@ -2,78 +2,83 @@
 layout: default
 ---
 
-<div id="menu">
-  <a href="{{site.baseurl}}/index">Homepage</a>
-  <a href="{{site.baseurl}}/blog">Blog</a>
-  <a href="{{site.baseurl}}/contact">Contact</a>
-</div>
-<div id="container">
-  <div id="name"><h1>Halit Sever</h1></div>
-  <div id="description">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <span class="latest-posts d-block mt-4">
+        <img src="../contents/assets/yellow-dot.svg" />
+        Latest blog post:
+        <a href="/2021/09/19/website-updated.html"> Website Updated</a>
+      </span>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 mt-5">
+      <h1 class="mt-5 pt-5">Halit Sever</h1>
+      <h4>Developer</h4>
+    </div>
+    <div class="col-md-6 mt-5">
+      <div class="avatar-section">
+        <img
+          class="avatar img-fluid"
+          alt="Murat Halit Sever's Profile Picture"
+          src="https://avatars.githubusercontent.com/u/34791459?v=4"
+        />
+        <span class="social"
+          ><img class="icn" src="../contents/assets/icons/github.svg" />
+          <a href="https://github.com/halitsever" target="_blank"
+            >github.com/halitsever</a
+          >
+          <img class="icn" src="../contents/assets/icons/linkedin.svg" />
+          <a href="https://www.linkedin.com/in/halitsever/" target="_blank"
+            >linkedin.com/halitsever</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5 mx-auto text-center">
     <p>
-      Welcome to my website! I'm a developer, I like to do open source
-      projects.<br />
-      I'm currently learning ruby rails<br />
-      If you want to work with me, you can check out the contact page.
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collaspe"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+      >
+        <img class="w-75" src="../contents/assets/arrow.png" />
+      </button>
     </p>
-    <br /><br />
-    <a href="#page-content" class="button">More...</a>
-  </div>
-</div>
-<div id="page-content">
-  <br /><br />
-  <h2>Technical skills</h2>
-  <br />
-  <div class="card">
-    <a>
-      <img id="icon" alt="mouse cursor icon" src="./contents/assests/icons/icon_web.svg" />Web
-      Development (End-to-End)<br />
-      <img id="icon" alt="refresh icon" src="./contents/assests/icons/icon_responsive.svg" />
-      Responsive Design</a
-    >
-  </div>
-  <div class="card">
-    <a
-      ><img id="icon" alt="mobile phone icon" src="./contents/assests/icons/icon_phone.svg" />Mobile
-      Development (Native)<br />
-      <img id="icon" alt="stats panel icon" src="./contents/assests/icons/icon_desktop.svg" /> Desktop
-      Application Development</a
-    >
-  </div>
-
-  <div style="clear:left;"></div>
-  <div id="blank"></div>
-  <h2>Latest Articles</h2>
-  <div id="articles">
-    {% assign colorswitch = 0 %} {%- for post in site.posts limit:4 -%} {%-
-    assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {%
-    if colorswitch == 1 or colorswitch == 2 %} {% if colorswitch == 1 %}
-    <div style="margin-left:2%;" class="card-article-big">
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        <h2>{{ post.title | escape }}</h2>
-        {{ post.excerpt }}
-      </a>
+    <div class="collapse py-4" id="collaspe">
+      <div class="card card-body bg-dark">
+        <br />
+        <h1 >Hi, I'm Halit Sever</h1>
+        <br />
+        <audio class="mx-auto" controls>
+          <source src="../contents/sound/halit_speech.mp3" type="audio/mpeg" />
+        </audio>
+        <br /><br />
+        <p class="w-50 mx-auto">
+          I was born in Istanbul, Turkey on November 11, 2002. I've been
+          interested in programming for about 4 years. I'm focused on back-end
+          technologies. I develop web and mobile applications in the companies I
+          work for.
+        </p>
+        <br /><br />
+        <img
+          class="w-50 mx-auto"
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=halitsever&layout=compact"
+          alt="Murat Halit Sever's Most Used Languages        "
+        />
+        <br /><br />
+        <p>
+          <a href="{{site.baseurl}}">Click here</a> to read the blog posts. <br>
+          If you want to work with me, you can reach me on the
+          <a href="{{sitebase.url}}/contact">contact</a> page.
+        </p>
+      </div>
     </div>
-    {% else %}
-    <div style="margin-right:2%;" class="card-article-big">
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        <h2>{{ post.title | escape }}</h2>
-        {{ post.excerpt }}
-      </a>
-    </div>
-    {% endif %} {% else %}
-
-    <div class="card-article-small">
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        <h2>{{ post.title | escape }}</h2>
-        {{ post.excerpt }}
-      </a>
-    </div>
-
-    {% endif %} {% assign colorswitch = colorswitch | plus: 1 %} {%- endfor -%}
-
-    <div style="clear:left;"></div>
-
-    {% include footer.html %}
   </div>
 </div>

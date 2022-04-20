@@ -18,13 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Website Name
-email: your@mail.com
-description: "You can edit description in _config file"
+title: Halit Sever
+email: halitsever@protonmail.com
+description: "Software Developer"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
-github_username:  
+github_username:  halitsever
+avatar: https://avatars.githubusercontent.com/u/34791459
 
 # Build settings
 theme: minima
