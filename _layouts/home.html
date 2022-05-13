@@ -3,34 +3,53 @@ layout: default
 ---
 
 <div class="container">
+  <div id="particles-js" style="position: absolute; z-index:-9; height:200%; width:80%;"></div>
+
   <div class="row">
+
     <div class="col-md-12">
+      
       <span class="latest-posts d-block mt-4">
-        <img src="../contents/assets/yellow-dot.svg" />
+        <img alt="Yellow Dot Icon" src="../contents/assets/yellow-dot.svg" />
         Latest blog post:
-        <a href="/2021/09/19/website-updated.html"> Website Updated</a>
+        <a href="/2021/09/19/website-updated.html" title="Latest blog post"> Website Updated</a>
       </span>
     </div>
   </div>
-  <div class="row mt-5">
-    <div class="col-md-6 mt-5">
-      <h1 class="mt-5 pt-5">Halit Sever</h1>
+  <div class="row">
+  
+    <div class="col-md-6">
+      <h1 class="mt-5 ">Halit Sever</h1>
       <h4>Developer</h4>
-    </div>
-    <div class="col-md-6 mt-5">
-      <div class="avatar-section">
+      <div class="qr-code mt-5 pt-5">
         <img
-          class="avatar img-fluid"
+          src="../contents/assets/insta-qrcode.svg"
+          class="qr pt-5 mt-5"
+          alt="Halit Sever's QR Code"
+        />
+      </div>
+    </div>
+    <div class="col-md-6 pt-5 mt-5 main-section">
+      
+      <div class="avatar-section mt2 ml-5">
+        <img
+          class="avatar img-fluid mx-auto"
           alt="Murat Halit Sever's Profile Picture"
           src="https://avatars.githubusercontent.com/u/34791459?v=4"
         />
+
+        <img
+          src="../contents/assets/cursor.svg"
+          class="cursor"
+          alt="Halit Sever Cursor"
+        />
         <span class="social"
-          ><img class="icn" src="../contents/assets/icons/github.svg" />
-          <a href="https://github.com/halitsever" target="_blank"
+          ><img alt="Github Icon" class="icn" src="../contents/assets/icons/github.svg" />
+          <a rel="nofollow" href="https://github.com/halitsever" target="_blank"
             >github.com/halitsever</a
           >
-          <img class="icn" src="../contents/assets/icons/linkedin.svg" />
-          <a href="https://www.linkedin.com/in/halitsever/" target="_blank"
+          <img alt="Linkedin Icon" class="icn" src="../contents/assets/icons/linkedin.svg" />
+          <a rel="nofollow" href="https://www.linkedin.com/in/halitsever/" target="_blank"
             >linkedin.com/halitsever</a
           >
         </span>
@@ -38,47 +57,30 @@ layout: default
     </div>
   </div>
 
-  <div class="row mt-5 mx-auto text-center">
+  <div class="row info-section mx-auto text-center w-50">
+    <h1>Hi, I'm Halit Sever</h1>
+    <br /><br /><br />
     <p>
-      <button
-        class="btn btn-primary"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collaspe"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-      >
-        <img class="w-75" src="../contents/assets/arrow.png" />
-      </button>
+      I was born in Istanbul, Turkey on November 11, 2002. I've been interested
+      in programming for about 4 years. I'm focused on back-end technologies. I
+      develop web and mobile applications in the companies I work for.
     </p>
-    <div class="collapse py-4" id="collaspe">
-      <div class="card card-body bg-dark">
-        <br />
-        <h1 >Hi, I'm Halit Sever</h1>
-        <br />
-        <audio class="mx-auto" controls>
-          <source src="../contents/sound/halit_speech.mp3" type="audio/mpeg" />
-        </audio>
-        <br /><br />
-        <p class="w-50 mx-auto">
-          I was born in Istanbul, Turkey on November 11, 2002. I've been
-          interested in programming for about 4 years. I'm focused on back-end
-          technologies. I develop web and mobile applications in the companies I
-          work for.
-        </p>
-        <br /><br />
-        <img
-          class="w-50 mx-auto"
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=halitsever&layout=compact"
-          alt="Murat Halit Sever's Most Used Languages        "
-        />
-        <br /><br />
-        <p>
-          <a href="{{site.baseurl}}">Click here</a> to read the blog posts. <br>
-          If you want to work with me, you can reach me on the
-          <a href="{{sitebase.url}}/contact">contact</a> page.
-        </p>
-      </div>
-    </div>
+    <br /><br /><br /><br /><br /><br />
+    <img
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=halitsever&layout=compact"
+      alt="Halit Sever's Most Used Languages"
+    />
+    <br />
+    <br />
+    <br /><br />
+    <br /><br />
+
+    <p>
+      <br />
+      <a href="{{sitebase.url}}/blog" title="Blog page">Click here</a> to read the blog posts.
+      <br />
+      If you want to work with me, you can reach me on the
+      <a href="{{sitebase.url}}/contact" title="Contact page">contact page.</a>
+    </p>
   </div>
 </div>
